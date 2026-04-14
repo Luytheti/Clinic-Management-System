@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createAppointment, getPatients, getDoctors } from "../api/api";
+import "./BookAppointment.css";
 
 export default function BookAppointment({ onSuccess }) {
   const [patients, setPatients] = useState([]);

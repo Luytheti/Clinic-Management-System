@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPatients, getDoctors, getAppointments, getBillingReport } from "../api/api";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   const [stats, setStats] = useState({ patients: 0, doctors: 0, appointments: 0, revenue: 0 });
@@ -34,13 +35,20 @@ export default function Dashboard() {
         <div className="stat-box"><span className="stat-num">₹{stats.revenue.toFixed(0)}</span><span>Revenue (Paid)</span></div>
       </div>
 
-      <h3 style={{ marginTop: "1.5rem" }}>Appointment Status</h3>
-      <div style={{ display: "flex", gap: "1rem", alignItems: "flex-end", height: "120px", marginTop: "0.5rem" }}>
+      <h3 className="section-title">Appointment Status</h3>
+      <div className="chart-container">
         {barData.map(({ label, count, color }) => (
-          <div key={label} style={{ textAlign: "center", flex: 1 }}>
-            <div style={{ background: color, height: `${(count / total) * 100}px`, minHeight: count > 0 ? 8 : 0, borderRadius: 4, transition: "height 0.4s" }} />
-            <div style={{ fontSize: 12, marginTop: 4 }}>{label}</div>
-            <div style={{ fontSize: 14, fontWeight: 700, color }}>{count}</div>
+          <div key={label} className="chart-item">
+            <div
+              className="bar"
+              style={{
+                background: color,
+                height: `${(count / total) * 100}px`,
+                minHeight: count > 0 ? 8 : 0,
+              }}
+            />
+            <div className="chart-label">{label}</div>
+            <div className="chart-value" style={{ color }}>{count}</div>
           </div>
         ))}
       </div>

@@ -108,3 +108,8 @@ tr:hover td { background: #f0f9ff; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   main { padding: 1rem; }
 }
+
+img {
+  max-height: 40px;
+  margin-right: 0.5rem;
+}

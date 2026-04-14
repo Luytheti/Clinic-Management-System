@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAppointments } from "../api/api";
+import "./AppointmentTable.css";
 
 export default function AppointmentTable({ refresh }) {
   const [appointments, setAppointments] = useState([]);
@@ -22,7 +23,7 @@ export default function AppointmentTable({ refresh }) {
         </thead>
         <tbody>
           {appointments.length === 0 ? (
-            <tr><td colSpan={6} style={{ textAlign: "center", color: "#888" }}>No appointments found</td></tr>
+            <tr><td colSpan={6}>No appointments found</td></tr>
           ) : appointments.map(a => (
             <tr key={a.appointment_id}>
               <td>{a.appointment_id}</td>

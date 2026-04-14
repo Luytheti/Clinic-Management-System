@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPatient } from "../api/api";
+import "./RegisterPatient.css";
 
 export default function RegisterPatient({ onSuccess }) {
   const [form, setForm] = useState({ name: "", age: "", gender: "Male", phone: "", email: "", address: "" });

@@ -4,6 +4,7 @@ import RegisterPatient from "./components/RegisterPatient";
 import BookAppointment from "./components/BookAppointment";
 import AppointmentTable from "./components/AppointmentTable";
 import "./index.css";
+import logo from "./CMS_logo.jpeg";
 
 const TABS = ["Dashboard", "Register Patient", "Book Appointment", "Appointments"];
 
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>🏥 Clinic Management System</h1>
+        <h1><img src={logo} alt="Logo" /> Clinic Management System</h1>
         <nav>
           {TABS.map(t => (
             <button key={t} className={active === t ? "nav-btn active" : "nav-btn"} onClick={() => setActive(t)}>
