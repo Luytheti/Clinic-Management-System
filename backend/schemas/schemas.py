@@ -128,11 +128,13 @@ class PrescriptionOut(BaseModel):
 
 
 # ─── Billing ────────────────────────────────────────────────
+# payment_status must match Oracle CHECK: ('Pending', 'Paid', 'Cancelled')
+# payment_mode must match Oracle CHECK:   ('Cash', 'Card', 'UPI', 'Insurance')
 class BillingCreate(BaseModel):
     appointment_id: int
     amount: float
-    payment_mode: Optional[str] = None
-    payment_status: Optional[str] = "Pending"
+    payment_mode: Optional[str] = None          # Cash | Card | UPI | Insurance
+    payment_status: Optional[str] = "Pending"   # Pending | Paid | Cancelled
 
 
 class BillingOut(BillingCreate):
