@@ -29,8 +29,9 @@ export const getStaff    = ()          => fetchJSON("/staff/");
 export const createStaff = (data)      => fetchJSON("/staff/", { method: "POST", body: JSON.stringify(data) });
 
 // Appointments
-export const getAppointments  = ()     => fetchJSON("/appointments/");
-export const createAppointment= (data) => fetchJSON("/appointments/", { method: "POST", body: JSON.stringify(data) });
+export const getAppointments       = ()             => fetchJSON("/appointments/");
+export const createAppointment     = (data)         => fetchJSON("/appointments/", { method: "POST", body: JSON.stringify(data) });
+export const updateAppointmentStatus = (id, status) => fetchJSON(`/appointments/${id}/status?status=${status}`, { method: "PATCH" });
 
 // Medical Records
 export const createMedicalRecord = (data) => fetchJSON("/medical-records/", { method: "POST", body: JSON.stringify(data) });
