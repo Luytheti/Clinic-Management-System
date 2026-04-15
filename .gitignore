@@ -1,28 +1,15 @@
-# =========================
-# Node (Frontend)
-# =========================
-node_modules/
-dist/
-.vite/
-
-# =========================
-# Python (Backend)
-# =========================
-venv/
+# Python
 __pycache__/
 *.pyc
+venv/
+backend/.env
 
-# =========================
-# Environment Variables
-# =========================
-.env
-.env.*
+# Node
+node_modules/
+dist/
 
-# =========================
-# OS / Editor
-# =========================
-.DS_Store
-Thumbs.db
+# Misc
+.DS_StoreThumbs.db
 .vscode/
 .idea/
 
